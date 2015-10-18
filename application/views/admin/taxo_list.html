@@ -1,0 +1,148 @@
+{%extends file="base_content.html"%}
+{%block name="breadcrumb"%}
+<li class="active">分类管理</li>
+{%/block%}
+
+{%block name="content"%}
+<div class="page-header">
+
+    <div class="row">
+        <div class="col-xs-1"  style="min-width: 80px">
+            <a href="/admin/taxo/add" class="btn btn-success btn-sm"> <i class="ace-icon fa fa-plus bigger-110"></i>
+                新建
+            </a>
+        </div>
+
+
+        <div class="col-xs-1" style="min-width: 80px">
+
+
+            <a id="sort_save" href="javascript:saveSort()" class="btn  btn-sm disabled">
+                <i class="ace-icon fa fa-save bigger-110"></i>保存排序
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<div id="sortable1" class="col-sm-12" >
+{%if count( $list )>0 %}
+{%$list|theme_taxo_elements%}
+{%else%}
+{%include file="inc_gritter.html"%}
+{%/if%}
+</div>
+{%/block%}
+{%block name="js"%}
+<script src="{%$smarty.const.RES_PATH%}/assets/js/jquery.nestable.js"></script>
+<script>
+
+
+    function updateStatus(tid,cb){
+
+        $.get("/admin/taxo/status/?tid="+tid+"&status="+(cb.checked?1:0),function(r){
+            if(r=='{%$smarty.const.STATUS_SUCCESS%}'){
+
+
+                if ( $(cb).find('i').attr('class') == 'ace-icon fa fa-check green bigger-130' ){
+                
+                    location.reload();
+                    //$(cb).find('i').attr('class','ace-icon fa fa-check bigger-130'); 
+                }else{
+                      location.reload();
+                    //$(cb).find('i').attr('class','ace-icon fa fa-check green bigger-130'); 
+                }
+                //console.log( $(cb).find('i').attr('class') );
+            }else{
+
+                alert('失败');
+                 console.log($(cb).find('i').attr('class') );
+                if(cb.checked){
+                   
+                    //cb.checked = false;
+                }else{
+
+                    //cb.checked = true;
+                }
+            }
+        });
+
+    }   
+
+
+    function deleteEntity( tid,cb ){
+       $.get("/admin/taxo/deleteEntity/?tid="+tid+"&status="+(cb.checked?1:0),function(r){
+            if(r=='{%$smarty.const.STATUS_SUCCESS%}'){
+
+
+                if ( $(cb).find('i').attr('class') == 'ace-icon fa fa-check green bigger-130' ){
+                
+                    //$(cb).find('i').attr('class','ace-icon fa fa-check bigger-130'); 
+                }else{
+                    
+                    //$(cb).find('i').attr('class','ace-icon fa fa-check green bigger-130'); 
+                }
+                //console.log( $(cb).find('i').attr('class') );
+            }else{
+
+                alert('失败');
+               
+          
+            }
+        });
+
+    }
+
+    function saveSort() {
+
+        data = $('.dd').nestable('serialize');
+
+        netstabledata =$('.dd').nestable('serialize');
+        var str = JSON.stringify(netstabledata);  
+        str = base64encode( str );
+    
+
+
+
+        $.post("/admin/taxo/sort", {data:str}, function (r) {
+
+            if (r == '{%$smarty.const.STATUS_SUCCESS%}') {
+
+                $("#sort_save").removeClass('btn-warning');
+                $("#sort_save").addClass('disabled');
+            }else{
+                alert("操作失败");
+            }
+        });
+    }
+
+
+
+
+
+
+    $(function(){
+
+       
+        //drag
+    
+        $('.dd').on('change', function(e){
+            $("#sort_save").removeClass('disabled');
+            $("#sort_save").addClass('btn-warning');
+        });        
+        $('.dd').nestable();
+
+        $('.dd-handle a').on('mousedown', function(e){
+
+            e.stopPropagation();
+        });
+                
+   
+        
+    }); 
+
+
+
+
+</script>
+{%/block%}

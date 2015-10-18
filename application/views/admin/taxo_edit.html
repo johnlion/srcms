@@ -1,0 +1,278 @@
+
+{%extends file="base_content.html"%}
+{%block name="breadcrumb"%}
+<li>
+  <a href="/admin/taxo">分类管理</a>
+</li>
+<li class="active">编辑</li>
+{%/block%}
+
+{%block name="content"%}
+<script src="{%$smarty.const.RES_PATH%}/assets/ckeditor/ckeditor.js"></script>
+<h3 class="lighter block green">编辑分类信息</h3>
+
+{%$msgbox%}
+
+<form class="form-horizontal" id="validation-form" method="post" role="form">
+  {%include file="inc_form_result.html"%}
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="ttitle">分类名称:</label>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="clearfix">
+        <input type="text" name="ttitle" id="ttitle" class="col-xs-12 col-sm-8"
+                        value="{%$entity.ttitle|default:''%}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="machinename">别名:</label>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="clearfix">
+        <input type="text" name="machinename" id="machinename" class="col-xs-12 col-sm-8"
+                        value="{%$entity.machinename|default:''%}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="taxotpl">分类模板:</label>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="clearfix">
+        <input type="text" name="taxotpl" id="taxotpl" class="col-xs-12 col-sm-8"
+                        value="{%$entity.taxotpl|default:''%}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="contenttpl">内容模板:</label>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="clearfix">
+        <input type="text" name="contenttpl" id="contenttpl" class="col-xs-12 col-sm-8"
+                        value="{%$entity.contenttpl|default:''%}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+ <!--
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="contenttpl">权重:</label>
+
+    <div class="col-xs-12 col-sm-1">
+      <div class="clearfix">
+          <input id="spinner" name="value" type="text"  value="{%$entity.sortid%}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+  -->
+
+
+
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="keyword">关键字:</label>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="clearfix">
+        <input type="text" name="keyword" id="keyword" class="col-xs-12 col-sm-8"
+                        value="{%$entity.keyword|default:''%}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="description">描述:</label>
+
+    <div class="col-xs-12 col-sm-8">
+      <div class="clearfix">
+        <input type="text" name="description" id="description" class="col-xs-12 col-sm-8"
+                        value="{%$entity.description|default:''%}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="clearfix form-actions">
+    <div class="col-md-offset-3 col-md-9">
+      <button class="btn btn-info" type="submit"> <i class="ace-icon fa fa-check bigger-110"></i>
+        提交
+      </button>
+      &nbsp; &nbsp; &nbsp;
+      <a class="btn" href="/admin/sys_user">
+        <i class="ace-icon fa fa-undo bigger-110"></i>
+        返回
+      </a>
+    </div>
+  </div>
+</form>
+{%/block%}
+
+{%block name="js"%}
+<script>
+      $(function(){
+
+          jQuery.validator.addMethod("ttitle", function (value, element) {
+              return this.optional(element) || /^[_a-zA-Z0-9\u4E00-\uFA29\uE7C7-\uE7F3]+$/.test(value);
+          }, "账号只能包含中文、数字，字母，下划线");
+
+
+          jQuery.validator.addMethod("machinename", function (value, element) {
+              return this.optional(element) || /^[_a-zA-Z0-9\u4E00-\uFA29\uE7C7-\uE7F3]+$/.test(value);
+          }, "账号只能包含中文、数字，字母，下划线");
+          $('#validation-form').validate({
+              errorElement: 'div',
+              errorClass: 'help-block',
+              focusInvalid: false,
+              rules: {
+     
+    
+                  ttitle: {
+                      required: true,
+                      minlength: 2,
+                      maxlength: 50,
+                      ttitle: 'required'
+                  }
+                  ,
+
+                  machinename: {
+                      required: false,
+                      minlength: 0,
+                      maxlength: 15
+                  },
+
+                  description: {
+                      required: false,
+                      minlength: 0,
+                      maxlength: 200
+                  },
+                  description: {
+                      required: false,
+                      minlength: 0,
+                      maxlength: 200
+                  }
+              },
+
+              messages: {
+                  ttitle: {
+                      required: "请输入分类信息名称",
+                      minlength: "分类信息名称需要2-15个字符",
+                      maxlength: "分类信息名称需要2-15个字符"
+                  },
+                  machinename: {
+                      required: "请输入别名",
+                      minlength: "别名需要2-15个字符",
+                      maxlength: "别名需要2-15个字符"
+                  },
+                  description: {
+                      required: "请输入描述",
+                      minlength: "描述需要0-200个字符",
+                      maxlength: "描述需要0-200个字符"
+                  },
+                  keyword: {
+                      required: "请输入关键字",
+                      minlength: "关键字需要0-200个字符",
+                      maxlength: "关键字需要0-200个字符"
+                  }
+              },
+
+
+
+              highlight: function (e) {
+                  $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+              },
+
+              success: function (e) {
+                  $(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+                  $(e).remove();
+              },
+
+              errorPlacement: function (error, element) {
+                  if(element.is(':checkbox') || element.is(':radio')) {
+                      var controls = element.closest('div[class*="col-"]');
+                      if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                      else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                  }
+                  else if(element.is('.select2')) {
+                      error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+                  }
+                  else if(element.is('.chosen-select')) {
+                      error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+                  }
+                  else error.insertAfter(element.parent());
+              }
+
+
+          });
+
+
+      //selectmenu
+         $( "#number" ).css('width', '200px')
+        .selectmenu({ position: { my : "left bottom", at: "left top" } })
+
+      
+        //datapicker
+        $( "#datepicker" ).datepicker({
+          showOtherMonths: true,
+          selectOtherMonths: false,
+          //isRTL:true,
+      
+          
+          /*
+          changeMonth: true,
+          changeYear: true,
+          
+          showButtonPanel: true,
+          beforeShow: function() {
+            //change button colors
+            var datepicker = $(this).datepicker( "widget" );
+            setTimeout(function(){
+              var buttons = datepicker.find('.ui-datepicker-buttonpane')
+              .find('button');
+              buttons.eq(0).addClass('btn btn-xs');
+              buttons.eq(1).addClass('btn btn-xs btn-success');
+              buttons.wrapInner('<span class="bigger-110" />');
+            }, 0);
+          }
+          */
+        });
+
+        //spinner
+        var spinner = $( "#spinner" ).spinner({
+          create: function( event, ui ) {
+            //add custom classes and icons
+            $(this)
+            .next().addClass('btn btn-success').html('<i class="ace-icon fa fa-plus"></i>')
+            .next().addClass('btn btn-danger').html('<i class="ace-icon fa fa-minus"></i>')
+            
+            //larger buttons on touch devices
+            if('touchstart' in document.documentElement) 
+              $(this).closest('.ui-spinner').addClass('ui-spinner-touch');
+          }
+        });
+
+        //selectmenu
+         $( "#number" ).css('width', '200px')
+        .selectmenu({ position: { my : "left bottom", at: "left top" } })
+
+
+      });
+</script>
+{%/block%}

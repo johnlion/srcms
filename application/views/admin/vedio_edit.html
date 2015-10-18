@@ -1,0 +1,241 @@
+{%extends file="base_content.html"%}
+{%block name="breadcrumb"%}
+<li>
+  <a href="/admin/news">视频管理</a>
+</li>
+<li class="active">编辑</li>
+{%/block%}
+
+{%block name="content"%}
+    <link rel="stylesheet" href="{%$smarty.const.RES_PATH%}/assets/css/jquery-ui.custom.css" />
+    <link rel="stylesheet" href="{%$smarty.const.RES_PATH%}/assets/css/chosen.css" />
+    <link rel="stylesheet" href="{%$smarty.const.RES_PATH%}/assets/css/datepicker.css" />
+    <link rel="stylesheet" href="{%$smarty.const.RES_PATH%}/assets/css/bootstrap-timepicker.css" />
+    <link rel="stylesheet" href="{%$smarty.const.RES_PATH%}/assets/css/daterangepicker.css" />
+    <link rel="stylesheet" href="{%$smarty.const.RES_PATH%}/assets/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="{%$smarty.const.RES_PATH%}/assets/css/colorpicker.css" />
+<link rel="stylesheet" href="{%$smarty.const.RES_PATH%}/assets/css/bootstrap-datepicker3.min.css" />
+
+
+<script src="{%$smarty.const.RES_PATH%}/assets/ckeditor/ckeditor.js"></script>
+
+
+
+
+<h3 class="lighter block green">编辑视频信息</h3>
+
+<form class="form-horizontal" id="validation-form" method="post" role="form">
+  {%include file="inc_form_result.html"%}
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="title">视频:</label>
+
+    <div class="col-xs-12 col-sm-9">
+      <div class="clearfix">
+        <input type="text" name="title" id="title" class="col-xs-12 col-sm-9"
+                        value="{%$entity.title|default:''%}" />
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="sys_group_id">视频分类:</label>
+
+    <div class="col-xs-12 col-sm-9">
+      <div class="clearfix">
+        <select name="sys_group_id" id="sys_group_id" class="col-xs-12 col-sm-6">
+          {%html_options options=$group_list selected=$entity.sys_group_id%}
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="flag_valid">剧集:</label>
+
+    <div class="col-xs-12 col-sm-9">
+      <div class="clearfix">
+        <label>
+          <input name="flag_valid" id="flag_valid" class="ace ace-switch ace-switch-6" type="checkbox"
+                           {%if $entity.flag_valid|default:''==1%}checked{%/if%}  value="1"/>
+          <span class="lbl"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="title">集数:</label>
+
+    <div class="col-xs-12 col-sm-9">
+      <div class="clearfix">
+        <input type="text" name="title" id="title" class="col-xs-12 col-sm-2"
+                        value="{%$entity.title|default:''%}" />
+      </div>
+    </div>
+  </div>
+  <div class="space-2"></div>
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="title">上映时间:</label>
+
+    <div class="col-xs-12 col-sm-1">
+      <div class="clearfix">
+
+      <div class="input-group input-group-sm">
+        <input type="text" id="datepicker" class="form-control" />
+        <span class="input-group-addon"> <i class="ace-icon fa fa-calendar"></i>
+        </span>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="flag_valid">浏览启用:</label>
+
+    <div class="col-xs-12 col-sm-9">
+      <div class="clearfix">
+        <label>
+          <input name="flag_valid" id="flag_valid" class="ace ace-switch ace-switch-6" type="checkbox"
+                           {%if $entity.flag_valid|default:''==1%}checked{%/if%}  value="1"/>
+          <span class="lbl"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="form-group">
+    <label class="control-label col-xs-12 col-sm-1 no-padding-right" for="content">内容:</label>
+
+    <div class="col-xs-12 col-sm-9">
+      <div class="clearfix">
+        <textarea class="col-xs-12 col-sm-6" name="content" id="content" style="height: 300px; "></textarea>
+        <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'content' );
+            </script>
+      </div>
+    </div>
+  </div>
+
+  <div class="space-2"></div>
+
+  <div class="clearfix form-actions">
+    <div class="col-md-offset-3 col-md-9">
+      <button class="btn btn-info" type="submit"> <i class="ace-icon fa fa-check bigger-110"></i>
+        提交
+      </button>
+      &nbsp; &nbsp; &nbsp;
+      <a class="btn" href="/admin/sys_user">
+        <i class="ace-icon fa fa-undo bigger-110"></i>
+        返回
+      </a>
+    </div>
+  </div>
+</form>
+{%/block%}
+
+{%block name="js"%}
+
+
+
+
+
+
+
+<script>
+      $(function(){
+
+
+
+
+          jQuery.validator.addMethod("title", function (value, element) {
+              return this.optional(element) || /^[_a-zA-Z0-9\u4E00-\uFA29\uE7C7-\uE7F3]+$/.test(value);
+          }, "账号只能包含中文、数字，字母，下划线");
+          $('#validation-form').validate({
+              errorElement: 'div',
+              errorClass: 'help-block',
+              focusInvalid: false,
+              rules: {
+
+                  title: {
+                      required: true,
+                      minlength: 3,
+                      maxlength: 50,
+                      title: 'required'
+                  }
+                  ,
+
+              },
+
+              messages: {
+         
+                  title: {
+                      required: "请输入账号",
+                      minlength: "账号需要3-15个字符",
+                      maxlength: "账号需要3-15个字符"
+                  },
+            
+              },
+
+
+
+              highlight: function (e) {
+                  $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+              },
+
+              success: function (e) {
+                  $(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+                  $(e).remove();
+              },
+
+              errorPlacement: function (error, element) {
+                  if(element.is(':checkbox') || element.is(':radio')) {
+                      var controls = element.closest('div[class*="col-"]');
+                      if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                      else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                  }
+                  else if(element.is('.select2')) {
+                      error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+                  }
+                  else if(element.is('.chosen-select')) {
+                      error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+                  }
+                  else error.insertAfter(element.parent());
+              }
+
+
+          });
+
+
+        $( "#datepicker" ).datepicker({
+          showOtherMonths: true,
+          selectOtherMonths: false,
+          //isRTL:true,
+      
+          
+          /*
+          changeMonth: true,
+          changeYear: true,
+          
+          showButtonPanel: true,
+          beforeShow: function() {
+            //change button colors
+            var datepicker = $(this).datepicker( "widget" );
+            setTimeout(function(){
+              var buttons = datepicker.find('.ui-datepicker-buttonpane')
+              .find('button');
+              buttons.eq(0).addClass('btn btn-xs');
+              buttons.eq(1).addClass('btn btn-xs btn-success');
+              buttons.wrapInner('<span class="bigger-110" />');
+            }, 0);
+          }
+      */
+        });
+      });
+</script>
+{%/block%}
