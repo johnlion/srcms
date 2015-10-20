@@ -214,10 +214,16 @@ define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
 define('RES_PATH', '/resources');
 
 //前台手机模板
-define('MOBILE_THEME', 'admin');
+define('MOBILE_THEME', 'mobile');
 
-//后台逻辑目录
+//后台主题模板
 define('ADMIN_THEME', 'admin');
+
+//系统常量
+define('ADMIN_APP_NAME', '思元端 CMS管理系统');
+define('ADMIN_APP_DESCRIPTION', '');
+define('ADMIN_APP_KEYWORD', '思元端 CMS管理系统|思元端 CMS管理系统|思元端 CMS管理系统|思元端 CMS管理系统');
+define('ADMIN_APP_AUTHOR', 'Chandlerxue');
 
 //调试目录log
 define('DEBUGPATH', FCPATH . 'debug/');

@@ -1,43 +1,42 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-13 09:41:04
-         compiled from "application/views/admin/sys_user_group_edit.html" */ ?>
-<?php /*%%SmartyHeaderCode:47086413561c61304e6dc1-85005000%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    '17d5d2e1bec1ad6255ef7b1ee65d213c31215b22' => 
-    array (
-      0 => 'application/views/admin/sys_user_group_edit.html',
-      1 => 1444633283,
-      2 => 'file',
-    ),
-    '6936d4693e583dc0405e92035acaa500586c5a09' => 
-    array (
-      0 => 'application/views/admin/base_content.html',
-      1 => 1444630588,
-      2 => 'file',
-    ),
-    '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
-    array (
-      0 => 'application/views/admin/base.html',
-      1 => 1400395326,
-      2 => 'file',
-    ),
-    'a620d37a01f499dc8ef79f2f19a4998155b93b2b' => 
-    array (
-      0 => 'application/views/admin/inc_form_result.html',
-      1 => 1398328410,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '47086413561c61304e6dc1-85005000',
-  'function' => 
-  array (
-  ),
-  'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_561c613073a400_38312307',
-),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_561c613073a400_38312307')) {function content_561c613073a400_38312307($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-19 15:50:39
+compiled from "application/views/admin/sys_user_group_edit.html" */?>
+<?php /*%%SmartyHeaderCode:5712138875624a0cf0e9220-77208877%%*/if (!defined('SMARTY_DIR')) {
+	exit('no direct access allowed');
+}
+
+$_valid = $_smarty_tpl->decodeProperties(array(
+	'file_dependency'  => array(
+		'17d5d2e1bec1ad6255ef7b1ee65d213c31215b22' => array(
+			0 => 'application/views/admin/sys_user_group_edit.html',
+			1 => 1444633283,
+			2 => 'file',
+		),
+		'6936d4693e583dc0405e92035acaa500586c5a09' => array(
+			0 => 'application/views/admin/base_content.html',
+			1 => 1444703926,
+			2 => 'file',
+		),
+		'876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => array(
+			0 => 'application/views/admin/base.html',
+			1 => 1445046913,
+			2 => 'file',
+		),
+		'a620d37a01f499dc8ef79f2f19a4998155b93b2b' => array(
+			0 => 'application/views/admin/inc_form_result.html',
+			1 => 1398328410,
+			2 => 'file',
+		),
+	),
+	'nocache_hash'     => '5712138875624a0cf0e9220-77208877',
+	'function'         => array(
+	),
+	'has_nocache_code' => false,
+	'version'          => 'Smarty-3.1.18',
+	'unifunc'          => 'content_5624a0cf300722_27062229',
+), false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5624a0cf300722_27062229')) {
+	function content_5624a0cf300722_27062229($_smarty_tpl) {
+		?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
@@ -55,10 +54,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- page specific plugin styles -->
 
+
+
+
+
+
     <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />-->
 
     <link rel="stylesheet" href="<?php echo @constant('RES_PATH');?>
-/assets/css/jquery-ui.custom.min.css" />
+/assets/css/jquery-ui.css" />
 
     <!-- ace styles -->
     <link rel="stylesheet" href="<?php echo @constant('RES_PATH');?>
@@ -83,7 +87,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- ace settings handler -->
     <script src="<?php echo @constant('RES_PATH');?>
-/assets/js/ace-extra.min.js"></script>
+/assets/js/ace-extra.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -110,9 +114,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
 
-    
 
-    
+
+
 
 </head>
 
@@ -128,12 +132,12 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/main/welcome">主页</a>
+                <a href="/{%$smarty.const.ADMIN_THEME%}/main/welcome">主页</a>
             </li>
 
 
-            
-<li><a href="/admin/sys_user_group">用户组管理</a></li>
+
+<li><a href="/{%$smarty.const.ADMIN_THEME%}/sys_user_group">用户组管理</a></li>
 <li class="active">编辑</li>
 
         </ul><!-- /.breadcrumb -->
@@ -150,16 +154,16 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <div class="row">
             <div class="col-xs-12">
                 <!-- PAGE CONTENT BEGINS -->
-                
+
 
 <h3 class="lighter block green">输入组信息</h3>
 
 <form class="form-horizontal" id="validation-form" method="post" role="form">
     <?php /*  Call merged included template "inc_form_result.html" */
-$_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_form_result.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '47086413561c61304e6dc1-85005000');
-content_561c61305fef50_75594845($_smarty_tpl);
-$_smarty_tpl = array_pop($_tpl_stack); 
+		$_tpl_stack[] = $_smarty_tpl;
+		$_smarty_tpl  = $_smarty_tpl->setupInlineSubTemplate("inc_form_result.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '5712138875624a0cf0e9220-77208877');
+		content_5624a0cf2528f7_62834922($_smarty_tpl);
+		$_smarty_tpl = array_pop($_tpl_stack);
 /*  End of included template "inc_form_result.html" */?>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="group_name">账号:</label>
@@ -167,7 +171,7 @@ $_smarty_tpl = array_pop($_tpl_stack);
         <div class="col-xs-12 col-sm-9">
             <div class="clearfix">
                 <input type="text" name="group_name" id="group_name" class="col-xs-12 col-sm-6"
-                       value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['entity']->value['group_name'])===null||$tmp==='' ? '' : $tmp);?>
+                       value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['entity']->value['group_name']) === null || $tmp === '' ? '' : $tmp);?>
 " />
             </div>
         </div>
@@ -184,7 +188,7 @@ $_smarty_tpl = array_pop($_tpl_stack);
             </button>
 
             &nbsp; &nbsp; &nbsp;
-            <a class="btn" href="/admin/sys_user_group">
+            <a class="btn" href="/{%$smarty.const.ADMIN_THEME%}/sys_user_group">
                 <i class="ace-icon fa fa-undo bigger-110"></i>
                 返回
             </a>
@@ -248,7 +252,16 @@ $_smarty_tpl = array_pop($_tpl_stack);
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/ace-elements.min.js"></script>
 <script src="<?php echo @constant('RES_PATH');?>
+/assets/js/ace/elements.spinner.js"></script>
+<script src="<?php echo @constant('RES_PATH');?>
 /assets/js/ace.min.js"></script>
+<script src="<?php echo @constant('RES_PATH');?>
+/assets/js/jquery.ui.touch-punch.js"></script>
+
+<!--self scripts -->
+<script src="<?php echo @constant('RES_PATH');?>
+/assets/js/base64.js"></script>
+
 
 <script>
       $(function(){
@@ -311,14 +324,17 @@ $_smarty_tpl = array_pop($_tpl_stack);
 
 </body>
 </html>
-<?php }} ?>
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-13 09:41:04
-         compiled from "application/views/admin/inc_form_result.html" */ ?>
-<?php if ($_valid && !is_callable('content_561c61305fef50_75594845')) {function content_561c61305fef50_75594845($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {?>
+<?php }}
+?>
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-19 15:50:39
+compiled from "application/views/admin/inc_form_result.html" */?>
+<?php if ($_valid && !is_callable('content_5624a0cf2528f7_62834922')) {
+	function content_5624a0cf2528f7_62834922($_smarty_tpl) {
+		?><?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {?>
 <div class="alert alert-danger">
     <strong>
         <i class="icon-remove"></i>
-        <?php echo (($tmp = @$_smarty_tpl->tpl_vars['do_result']->value)===null||$tmp==='' ? '' : $tmp);?>
+        <?php echo (($tmp = @$_smarty_tpl->tpl_vars['do_result']->value) === null || $tmp === '' ? '' : $tmp);?>
 
     </strong>
 </div>
@@ -326,11 +342,13 @@ $_smarty_tpl = array_pop($_tpl_stack);
 <div class="alert alert-block alert-success">
     <strong>
         <i class="icon-ok"></i>
-        <?php echo (($tmp = @$_smarty_tpl->tpl_vars['do_result']->value)===null||$tmp==='' ? '' : $tmp);?>
+        <?php echo (($tmp = @$_smarty_tpl->tpl_vars['do_result']->value) === null || $tmp === '' ? '' : $tmp);?>
 
     </strong>
 </div>
-<?php }?>
+<?php }
+		?>
 
 
-<?php }} ?>
+<?php }}
+?>

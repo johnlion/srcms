@@ -1,44 +1,47 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-14 11:06:24
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:01:34
          compiled from "application/views/admin/sys_group_permission_edit.html" */ ?>
-<?php /*%%SmartyHeaderCode:1521178911561dc6b0255313-34793576%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:443495260562602ee9bf2d4-34968088%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '020d1abb4d75103218f0691b0a7c5b6112a78fc1' => 
     array (
       0 => 'application/views/admin/sys_group_permission_edit.html',
-      1 => 1444704146,
+      1 => 1445241884,
       2 => 'file',
     ),
     '6936d4693e583dc0405e92035acaa500586c5a09' => 
     array (
       0 => 'application/views/admin/base_content.html',
-      1 => 1444703926,
+      1 => 1445241884,
       2 => 'file',
     ),
     '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
     array (
       0 => 'application/views/admin/base.html',
-      1 => 1444786163,
+      1 => 1445322852,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1521178911561dc6b0255313-34793576',
+  'nocache_hash' => '443495260562602ee9bf2d4-34968088',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_561dc6b0943ef8_05419247',
+  'unifunc' => 'content_562602eec66451_99902341',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_561dc6b0943ef8_05419247')) {function content_561dc6b0943ef8_05419247($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if ($_valid && !is_callable('content_562602eec66451_99902341')) {function content_562602eec66451_99902341($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <title>后台管理系统</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="<?php echo @constant('ADMIN_APP_KEYWORD');?>
+" />
+     <meta name="author" content="<?php echo @constant('ADMIN_APP_AUTHOR');?>
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
@@ -82,7 +85,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- ace settings handler -->
     <script src="<?php echo @constant('RES_PATH');?>
-/assets/js/ace-extra.min.js"></script>
+/assets/js/ace-extra.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -144,12 +147,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/admin/main/welcome">主页</a>
+                <a href="/<?php echo @constant('ADMIN_THEME');?>
+/main/welcome">主页</a>
             </li>
 
 
             
-<li><a href="/admin/sys_user_group">用户组管理</a></li>
+<li><a href="/<?php echo @constant('ADMIN_THEME');?>
+/sys_user_group">用户组管理</a></li>
 <li class="active">权限配置</li>
 
         </ul><!-- /.breadcrumb -->
@@ -316,11 +321,15 @@ $_smarty_tpl->tpl_vars['action']->_loop = true;
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/ace-elements.min.js"></script>
 <script src="<?php echo @constant('RES_PATH');?>
-/assets/js/elements.spinner.js"></script>
+/assets/js/ace/elements.spinner.js"></script>
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/ace.min.js"></script>
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/jquery.ui.touch-punch.js"></script>
+
+<!--self scripts -->
+<script src="<?php echo @constant('RES_PATH');?>
+/assets/js/base64.js"></script>
 
 
 

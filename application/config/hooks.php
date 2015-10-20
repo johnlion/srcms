@@ -1,4 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) {
+	exit('No direct script access allowed');
+}
+
 /*
 | -------------------------------------------------------------------------
 | Hooks
@@ -8,9 +11,19 @@
 |
 |	http://codeigniter.com/user_guide/general/hooks.html
 |
-*/
-
-
+ */
 
 /* End of file hooks.php */
 /* Location: ./application/config/hooks.php */
+
+/*
+| -------------------------------------------------------------------------
+| 角色权限管理
+| -------------------------------------------------------------------------
+ */
+$hook['post_controller_constructor'] = array(
+	'class'    => 'Auth',
+	'function' => 'runauth',
+	'filename' => 'auth.php',
+	'filepath' => 'hooks',
+);

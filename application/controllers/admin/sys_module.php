@@ -43,7 +43,7 @@ class Sys_module extends Base_Controller {
 
 	public function add() {
 		if (IS_POST) {
-			$_data       = $this->parseData(array('module_name', 'module_parent_id', 'module_type', 'module_resource', 'module_icon'));
+			$_data       = $this->parseData(array('module_name', 'module_parent_id', 'module_type', 'module_resource', 'module_icon', 'module_hidden'));
 			$_data['id'] = get_rnd_id();
 			$this->handleResult($this->sys_module_model->addEntity($_data));
 		}
@@ -54,7 +54,7 @@ class Sys_module extends Base_Controller {
 	public function edit() {
 		$_id = $this->input->get('id');
 		if (IS_POST) {
-			$_data       = $this->parseData(array('module_name', 'module_resource', 'module_icon'));
+			$_data       = $this->parseData(array('module_name', 'module_resource', 'module_icon', 'module_hidden'));
 			$_data['id'] = $_id;
 			$this->handleResult($this->sys_module_model->updateEntityByID($_data, $_id));
 		}

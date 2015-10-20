@@ -40,12 +40,12 @@
 
                                         <div class="space-6"></div>
 
-                                        <form>
+                                        <form  class="form-horizontal" id="validation-form" method="post" role="form">
                                             <fieldset>
                                                 <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="text" class="form-control"
-                                                                   placeholder="Username"/>
+                                                                   placeholder="username" name="username" id="username"  />
 															<i class="ace-icon fa fa-user" style="margin-top: 2px"></i>
 														</span>
                                                 </label>
@@ -53,7 +53,7 @@
                                                 <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="password" class="form-control"
-                                                                   placeholder="Password"/>
+                                                                   placeholder="password" id="password" name="password" />
 															<i class="ace-icon fa fa-lock"
                                                                style="margin-right: 3px;margin-top: 2px"></i>
 														</span>
@@ -104,4 +104,80 @@
     <!-- /.main-container -->
 
 </div>
+{%/block%}
+
+<
+{%block name="js"%}
+<script>
+      $(function(){
+
+          jQuery.validator.addMethod("username", function (value, element) {
+              return this.optional(element) || /^[_a-zA-Z0-9]+$/.test(value);
+          }, "账号只能包含数字，字母，下划线");
+          $('#validation-form').validate({
+              errorElement: 'div',
+              errorClass: 'help-block',
+              focusInvalid: false,
+              rules: {
+      
+             
+            password: {
+                      required: true,
+                      minlength: 4,
+                      maxlength: 15
+                  },
+                  username: {
+                      required: true,
+                      minlength: 3,
+                      maxlength: 15,
+                      username: 'required'
+                  }
+        
+        
+              },
+
+              messages: {
+                  password: {
+                      required: "请输入密码",
+                      minlength: "密码需要4-12个字符",
+                      maxlength: "密码需要4-15个字符"
+                  },
+                  username: {
+                      required: "请输入账号",
+                      minlength: "账号需要3-15个字符",
+                      maxlength: "账号需要3-15个字符"
+                  },
+      
+              },
+
+
+
+              highlight: function (e) {
+                  $(e).closest('.form-group').removeClass('has-info').addClass('has-error');
+              },
+
+              success: function (e) {
+                  $(e).closest('.form-group').removeClass('has-error');//.addClass('has-info');
+                  $(e).remove();
+              },
+
+              errorPlacement: function (error, element) {
+                  if(element.is(':checkbox') || element.is(':radio')) {
+                      var controls = element.closest('div[class*="col-"]');
+                      if(controls.find(':checkbox,:radio').length > 1) controls.append(error);
+                      else error.insertAfter(element.nextAll('.lbl:eq(0)').eq(0));
+                  }
+                  else if(element.is('.select2')) {
+                      error.insertAfter(element.siblings('[class*="select2-container"]:eq(0)'));
+                  }
+                  else if(element.is('.chosen-select')) {
+                      error.insertAfter(element.siblings('[class*="chosen-container"]:eq(0)'));
+                  }
+                  else error.insertAfter(element.parent());
+              }
+
+
+          });
+      });
+</script>
 {%/block%}

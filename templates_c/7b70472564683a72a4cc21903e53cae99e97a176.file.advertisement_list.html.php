@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-13 21:03:40
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:00:48
          compiled from "application/views/admin/advertisement_list.html" */ ?>
-<?php /*%%SmartyHeaderCode:2077912968561d012c0f97f1-03001081%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:643984206562602c00b52b4-70006108%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '7b70472564683a72a4cc21903e53cae99e97a176' => 
     array (
       0 => 'application/views/admin/advertisement_list.html',
-      1 => 1444631928,
+      1 => 1445241884,
       2 => 'file',
     ),
     '6936d4693e583dc0405e92035acaa500586c5a09' => 
     array (
       0 => 'application/views/admin/base_content.html',
-      1 => 1444703926,
+      1 => 1445241884,
       2 => 'file',
     ),
     '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
     array (
       0 => 'application/views/admin/base.html',
-      1 => 1444727969,
+      1 => 1445322852,
       2 => 'file',
     ),
     '2ec1863126e136f6c010ce65e21b3c5dff64ed3b' => 
@@ -29,15 +29,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2077912968561d012c0f97f1-03001081',
+  'nocache_hash' => '643984206562602c00b52b4-70006108',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_561d012c3fa733_10287204',
+  'unifunc' => 'content_562602c02b5863_57171950',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_561d012c3fa733_10287204')) {function content_561d012c3fa733_10287204($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/vagrant/www/ntf/application/libraries/Smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_562602c02b5863_57171950')) {function content_562602c02b5863_57171950($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/vagrant/www/ntf/application/libraries/Smarty/plugins/modifier.date_format.php';
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
@@ -45,7 +45,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta charset="utf-8" />
     <title>后台管理系统</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="<?php echo @constant('ADMIN_APP_KEYWORD');?>
+" />
+     <meta name="author" content="<?php echo @constant('ADMIN_APP_AUTHOR');?>
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
@@ -89,7 +92,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- ace settings handler -->
     <script src="<?php echo @constant('RES_PATH');?>
-/assets/js/ace-extra.min.js"></script>
+/assets/js/ace-extra.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -134,7 +137,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/admin/main/welcome">主页</a>
+                <a href="/<?php echo @constant('ADMIN_THEME');?>
+/main/welcome">主页</a>
             </li>
 
 
@@ -160,7 +164,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <div class="row">
         <div class="col-xs-1"  style="min-width: 80px">
-            <a href="/admin/vedio/add" class="btn btn-success btn-sm"> <i class="ace-icon fa fa-plus bigger-110"></i>
+            <a href="/<?php echo @constant('ADMIN_THEME');?>
+/vedio/add" class="btn btn-success btn-sm"> <i class="ace-icon fa fa-plus bigger-110"></i>
                 新建
             </a>
         </div>
@@ -195,7 +200,8 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
             <td>
                 <div class="action-buttons">
 
-                    <a class="green" href="/admin/vedio/edit&nid=<?php echo $_smarty_tpl->tpl_vars['value']->value['nid'];?>
+                    <a class="green" href="/<?php echo @constant('ADMIN_THEME');?>
+/vedio/edit&nid=<?php echo $_smarty_tpl->tpl_vars['value']->value['nid'];?>
 "> <i class="ace-icon fa fa-pencil bigger-130"></i>
                     </a>
 
@@ -226,8 +232,8 @@ if (!$_smarty_tpl->tpl_vars['value']->_loop) {
 ?>
 <?php /*  Call merged included template "inc_gritter.html" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_gritter.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '2077912968561d012c0f97f1-03001081');
-content_561d012c380e21_92211154($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_gritter.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '643984206562602c00b52b4-70006108');
+content_562602c0204067_92852362($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "inc_gritter.html" */?>
 <?php } ?>
@@ -290,9 +296,16 @@ $_smarty_tpl = array_pop($_tpl_stack);
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/ace-elements.min.js"></script>
 <script src="<?php echo @constant('RES_PATH');?>
+/assets/js/ace/elements.spinner.js"></script>
+<script src="<?php echo @constant('RES_PATH');?>
 /assets/js/ace.min.js"></script>
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/jquery.ui.touch-punch.js"></script>
+
+<!--self scripts -->
+<script src="<?php echo @constant('RES_PATH');?>
+/assets/js/base64.js"></script>
+
 
 <script>
     function deleteEntity(id,btn){
@@ -316,9 +329,9 @@ $_smarty_tpl = array_pop($_tpl_stack);
 </body>
 </html>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-13 21:03:40
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:00:48
          compiled from "application/views/admin/inc_gritter.html" */ ?>
-<?php if ($_valid && !is_callable('content_561d012c380e21_92211154')) {function content_561d012c380e21_92211154($_smarty_tpl) {?><script>
+<?php if ($_valid && !is_callable('content_562602c0204067_92852362')) {function content_562602c0204067_92852362($_smarty_tpl) {?><script>
 
     $(function () {
         $.gritter.add({

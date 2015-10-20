@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-18 16:03:09
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 14:44:30
          compiled from "application/views/admin/taxo_edit.html" */ ?>
-<?php /*%%SmartyHeaderCode:18421615705623523dcfc593-85080294%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:19803476915625e2ce0287b6-16015929%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '4a3780b6d9267566bf22d1e7496faeebe0e01aee' => 
     array (
       0 => 'application/views/admin/taxo_edit.html',
-      1 => 1445148269,
+      1 => 1445241884,
       2 => 'file',
     ),
     '6936d4693e583dc0405e92035acaa500586c5a09' => 
     array (
       0 => 'application/views/admin/base_content.html',
-      1 => 1444703926,
+      1 => 1445241884,
       2 => 'file',
     ),
     '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
     array (
       0 => 'application/views/admin/base.html',
-      1 => 1445046913,
+      1 => 1445322852,
       2 => 'file',
     ),
     'a620d37a01f499dc8ef79f2f19a4998155b93b2b' => 
@@ -29,22 +29,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '18421615705623523dcfc593-85080294',
+  'nocache_hash' => '19803476915625e2ce0287b6-16015929',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_5623523def52a8_20218119',
+  'unifunc' => 'content_5625e2ce3d49d9_44745741',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5623523def52a8_20218119')) {function content_5623523def52a8_20218119($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if ($_valid && !is_callable('content_5625e2ce3d49d9_44745741')) {function content_5625e2ce3d49d9_44745741($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <title>后台管理系统</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="<?php echo @constant('ADMIN_APP_KEYWORD');?>
+" />
+     <meta name="author" content="<?php echo @constant('ADMIN_APP_AUTHOR');?>
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
@@ -133,13 +136,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/admin/main/welcome">主页</a>
+                <a href="/<?php echo @constant('ADMIN_THEME');?>
+/main/welcome">主页</a>
             </li>
 
 
             
 <li>
-  <a href="/admin/taxo">分类管理</a>
+  <a href="/<?php echo @constant('ADMIN_THEME');?>
+/taxo">分类管理</a>
 </li>
 <li class="active">编辑</li>
 
@@ -168,8 +173,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <form class="form-horizontal" id="validation-form" method="post" role="form">
   <?php /*  Call merged included template "inc_form_result.html" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_form_result.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '18421615705623523dcfc593-85080294');
-content_5623523de0d9d3_04688858($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_form_result.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '19803476915625e2ce0287b6-16015929');
+content_5625e2ce2bb048_44881355($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "inc_form_result.html" */?>
   <div class="form-group">
@@ -280,7 +285,8 @@ $_smarty_tpl = array_pop($_tpl_stack);
         提交
       </button>
       &nbsp; &nbsp; &nbsp;
-      <a class="btn" href="/admin/sys_user">
+      <a class="btn" href="/<?php echo @constant('ADMIN_THEME');?>
+/sys_user">
         <i class="ace-icon fa fa-undo bigger-110"></i>
         返回
       </a>
@@ -390,7 +396,7 @@ $_smarty_tpl = array_pop($_tpl_stack);
                       minlength: 0,
                       maxlength: 200
                   },
-                  description: {
+                  keyword: {
                       required: false,
                       minlength: 0,
                       maxlength: 200
@@ -507,9 +513,9 @@ $_smarty_tpl = array_pop($_tpl_stack);
 </body>
 </html>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-18 16:03:09
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 14:44:30
          compiled from "application/views/admin/inc_form_result.html" */ ?>
-<?php if ($_valid && !is_callable('content_5623523de0d9d3_04688858')) {function content_5623523de0d9d3_04688858($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {?>
+<?php if ($_valid && !is_callable('content_5625e2ce2bb048_44881355')) {function content_5625e2ce2bb048_44881355($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {?>
 <div class="alert alert-danger">
     <strong>
         <i class="icon-remove"></i>

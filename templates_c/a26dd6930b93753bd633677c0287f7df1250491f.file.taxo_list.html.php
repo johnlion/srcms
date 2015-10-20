@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-18 16:16:49
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:03:29
          compiled from "application/views/admin/taxo_list.html" */ ?>
-<?php /*%%SmartyHeaderCode:105882191056235571354c92-43932578%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:3990748225626036113e1c9-46227975%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'a26dd6930b93753bd633677c0287f7df1250491f' => 
     array (
       0 => 'application/views/admin/taxo_list.html',
-      1 => 1445154487,
+      1 => 1445241884,
       2 => 'file',
     ),
     '6936d4693e583dc0405e92035acaa500586c5a09' => 
     array (
       0 => 'application/views/admin/base_content.html',
-      1 => 1444703926,
+      1 => 1445241884,
       2 => 'file',
     ),
     '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
     array (
       0 => 'application/views/admin/base.html',
-      1 => 1445046913,
+      1 => 1445322852,
       2 => 'file',
     ),
     '2ec1863126e136f6c010ce65e21b3c5dff64ed3b' => 
@@ -29,22 +29,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '105882191056235571354c92-43932578',
+  'nocache_hash' => '3990748225626036113e1c9-46227975',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_562355715153f0_30970964',
+  'unifunc' => 'content_562603613b9302_05319266',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_562355715153f0_30970964')) {function content_562355715153f0_30970964($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if ($_valid && !is_callable('content_562603613b9302_05319266')) {function content_562603613b9302_05319266($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <title>后台管理系统</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="<?php echo @constant('ADMIN_APP_KEYWORD');?>
+" />
+     <meta name="author" content="<?php echo @constant('ADMIN_APP_AUTHOR');?>
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
@@ -133,7 +136,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/admin/main/welcome">主页</a>
+                <a href="/<?php echo @constant('ADMIN_THEME');?>
+/main/welcome">主页</a>
             </li>
 
 
@@ -159,7 +163,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <div class="row">
         <div class="col-xs-1"  style="min-width: 80px">
-            <a href="/admin/taxo/add" class="btn btn-success btn-sm"> <i class="ace-icon fa fa-plus bigger-110"></i>
+            <a href="/<?php echo @constant('ADMIN_THEME');?>
+/taxo/add" class="btn btn-success btn-sm"> <i class="ace-icon fa fa-plus bigger-110"></i>
                 新建
             </a>
         </div>
@@ -183,8 +188,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <?php } else { ?>
 <?php /*  Call merged included template "inc_gritter.html" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_gritter.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '105882191056235571354c92-43932578');
-content_562355714850e2_03130890($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_gritter.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '3990748225626036113e1c9-46227975');
+content_562603612be4c5_86636749($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "inc_gritter.html" */?>
 <?php }?>
@@ -375,9 +380,9 @@ $_smarty_tpl = array_pop($_tpl_stack);
 </body>
 </html>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-18 16:16:49
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:03:29
          compiled from "application/views/admin/inc_gritter.html" */ ?>
-<?php if ($_valid && !is_callable('content_562355714850e2_03130890')) {function content_562355714850e2_03130890($_smarty_tpl) {?><script>
+<?php if ($_valid && !is_callable('content_562603612be4c5_86636749')) {function content_562603612be4c5_86636749($_smarty_tpl) {?><script>
 
     $(function () {
         $.gritter.add({

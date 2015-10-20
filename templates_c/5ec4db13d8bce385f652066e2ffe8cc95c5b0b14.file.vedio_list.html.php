@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-16 13:38:17
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:03:31
          compiled from "application/views/admin/vedio_list.html" */ ?>
-<?php /*%%SmartyHeaderCode:80433215856208d49d1d781-50667980%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:194306092856260363a183d5-88642483%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '5ec4db13d8bce385f652066e2ffe8cc95c5b0b14' => 
     array (
       0 => 'application/views/admin/vedio_list.html',
-      1 => 1444706138,
+      1 => 1445241884,
       2 => 'file',
     ),
     '6936d4693e583dc0405e92035acaa500586c5a09' => 
     array (
       0 => 'application/views/admin/base_content.html',
-      1 => 1444703926,
+      1 => 1445241884,
       2 => 'file',
     ),
     '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
     array (
       0 => 'application/views/admin/base.html',
-      1 => 1444973839,
+      1 => 1445322852,
       2 => 'file',
     ),
     '2ec1863126e136f6c010ce65e21b3c5dff64ed3b' => 
@@ -29,15 +29,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '80433215856208d49d1d781-50667980',
+  'nocache_hash' => '194306092856260363a183d5-88642483',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_56208d4a00e093_76541840',
+  'unifunc' => 'content_56260363cc18b6_63306727',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56208d4a00e093_76541840')) {function content_56208d4a00e093_76541840($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/vagrant/www/ntf/application/libraries/Smarty/plugins/modifier.date_format.php';
+<?php if ($_valid && !is_callable('content_56260363cc18b6_63306727')) {function content_56260363cc18b6_63306727($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_date_format')) include '/vagrant/www/ntf/application/libraries/Smarty/plugins/modifier.date_format.php';
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
@@ -45,7 +45,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta charset="utf-8" />
     <title>后台管理系统</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="<?php echo @constant('ADMIN_APP_KEYWORD');?>
+" />
+     <meta name="author" content="<?php echo @constant('ADMIN_APP_AUTHOR');?>
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
@@ -134,7 +137,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/admin/main/welcome">主页</a>
+                <a href="/<?php echo @constant('ADMIN_THEME');?>
+/main/welcome">主页</a>
             </li>
 
 
@@ -160,7 +164,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <div class="row">
         <div class="col-xs-1"  style="min-width: 80px">
-            <a href="/admin/vedio/add" class="btn btn-success btn-sm"> <i class="ace-icon fa fa-plus bigger-110"></i>
+            <a href="/<?php echo @constant('ADMIN_THEME');?>
+/vedio/add" class="btn btn-success btn-sm"> <i class="ace-icon fa fa-plus bigger-110"></i>
                 新建
             </a>
         </div>
@@ -195,7 +200,8 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
             <td>
                 <div class="action-buttons">
 
-                    <a class="green" href="/admin/vedio/edit?nid=<?php echo $_smarty_tpl->tpl_vars['value']->value['nid'];?>
+                    <a class="green" href="/<?php echo @constant('ADMIN_THEME');?>
+/vedio/edit?nid=<?php echo $_smarty_tpl->tpl_vars['value']->value['nid'];?>
 "> <i class="ace-icon fa fa-pencil bigger-130"></i>
                     </a>
 
@@ -226,8 +232,8 @@ if (!$_smarty_tpl->tpl_vars['value']->_loop) {
 ?>
 <?php /*  Call merged included template "inc_gritter.html" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_gritter.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '80433215856208d49d1d781-50667980');
-content_56208d49ec21d3_35386984($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_gritter.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '194306092856260363a183d5-88642483');
+content_56260363c3f385_86386275($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "inc_gritter.html" */?>
 <?php } ?>
@@ -296,6 +302,10 @@ $_smarty_tpl = array_pop($_tpl_stack);
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/jquery.ui.touch-punch.js"></script>
 
+<!--self scripts -->
+<script src="<?php echo @constant('RES_PATH');?>
+/assets/js/base64.js"></script>
+
 
 <script>
     function deleteEntity(id,btn){
@@ -319,9 +329,9 @@ $_smarty_tpl = array_pop($_tpl_stack);
 </body>
 </html>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-16 13:38:17
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:03:31
          compiled from "application/views/admin/inc_gritter.html" */ ?>
-<?php if ($_valid && !is_callable('content_56208d49ec21d3_35386984')) {function content_56208d49ec21d3_35386984($_smarty_tpl) {?><script>
+<?php if ($_valid && !is_callable('content_56260363c3f385_86386275')) {function content_56260363c3f385_86386275($_smarty_tpl) {?><script>
 
     $(function () {
         $.gritter.add({

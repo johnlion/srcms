@@ -48,10 +48,18 @@ class Sys_group_permission extends Base_Controller {
 		$_flag      = $this->input->get('flag');
 
 		if ($_flag == 1) {
+
 			$_data = array('user_group_id' => $_group_id, 'sys_module_id' => $_module_id, 'id' => get_rnd_id());
-			echo $this->sys_group_permission_model->addEntity($_data) ? STATUS_SUCCESS : STATUS_ERROR;
+
+			$_exist = $this->sys_group_permission_model->getEntity(array('user_group_id' => $_group_id, 'sys_module_id' => $_module_id));
+
+			if (!empty($_exist)) {
+				echo STATUS_ERROR;exit();
+			}
+
+			echo $this->sys_group_permission_model->addEntity($_data) ? STATUS_SUCCESS : STATUS_ERROR;exit();
 		} else {
-			echo $this->sys_group_permission_model->deleteEntity(array('user_group_id' => $_group_id, 'sys_module_id' => $_module_id)) ? STATUS_SUCCESS : STATUS_ERROR;
+			echo $this->sys_group_permission_model->deleteEntity(array('user_group_id' => $_group_id, 'sys_module_id' => $_module_id)) ? STATUS_SUCCESS : STATUS_ERROR;exit();
 		}
 
 	}

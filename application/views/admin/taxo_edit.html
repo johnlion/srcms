@@ -2,7 +2,7 @@
 {%extends file="base_content.html"%}
 {%block name="breadcrumb"%}
 <li>
-  <a href="/admin/taxo">分类管理</a>
+  <a href="/{%$smarty.const.ADMIN_THEME%}/taxo">分类管理</a>
 </li>
 <li class="active">编辑</li>
 {%/block%}
@@ -116,7 +116,7 @@
         提交
       </button>
       &nbsp; &nbsp; &nbsp;
-      <a class="btn" href="/admin/sys_user">
+      <a class="btn" href="/{%$smarty.const.ADMIN_THEME%}/sys_user">
         <i class="ace-icon fa fa-undo bigger-110"></i>
         返回
       </a>
@@ -163,7 +163,7 @@
                       minlength: 0,
                       maxlength: 200
                   },
-                  description: {
+                  keyword: {
                       required: false,
                       minlength: 0,
                       maxlength: 200

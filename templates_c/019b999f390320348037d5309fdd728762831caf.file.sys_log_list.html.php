@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-15 21:57:16
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:03:37
          compiled from "application/views/admin/sys_log_list.html" */ ?>
-<?php /*%%SmartyHeaderCode:803400768561fb0bcef36b2-84025730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:209229616156260369c4fcf2-14754863%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -13,32 +13,35 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '6936d4693e583dc0405e92035acaa500586c5a09' => 
     array (
       0 => 'application/views/admin/base_content.html',
-      1 => 1444703926,
+      1 => 1445241884,
       2 => 'file',
     ),
     '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
     array (
       0 => 'application/views/admin/base.html',
-      1 => 1444825945,
+      1 => 1445322852,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '803400768561fb0bcef36b2-84025730',
+  'nocache_hash' => '209229616156260369c4fcf2-14754863',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_561fb0bd172067_57572332',
+  'unifunc' => 'content_56260369e28dd1_35280007',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_561fb0bd172067_57572332')) {function content_561fb0bd172067_57572332($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if ($_valid && !is_callable('content_56260369e28dd1_35280007')) {function content_56260369e28dd1_35280007($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <title>后台管理系统</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="<?php echo @constant('ADMIN_APP_KEYWORD');?>
+" />
+     <meta name="author" content="<?php echo @constant('ADMIN_APP_AUTHOR');?>
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
@@ -82,7 +85,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- ace settings handler -->
     <script src="<?php echo @constant('RES_PATH');?>
-/assets/js/ace-extra.min.js"></script>
+/assets/js/ace-extra.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -127,7 +130,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/admin/main/welcome">主页</a>
+                <a href="/<?php echo @constant('ADMIN_THEME');?>
+/main/welcome">主页</a>
             </li>
 
 
@@ -216,6 +220,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 /assets/js/ace.min.js"></script>
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/jquery.ui.touch-punch.js"></script>
+
+<!--self scripts -->
+<script src="<?php echo @constant('RES_PATH');?>
+/assets/js/base64.js"></script>
 
 
 

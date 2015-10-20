@@ -39,7 +39,7 @@ class Base_Controller extends CI_Controller {
 
 		$_user = $this->session->userdata['admin'];
 		if (empty($_user)) {
-			header("Location: admin.php?c=main&m=login");
+			header("Location: /" . ADMIN_THEME . "/main/login");
 			exit;
 		}
 

@@ -58,17 +58,51 @@ function isPost() {
  * @param  [type] $description [description]
  * @return [type]              [description]
  */
-function cprint($data, $description) {
+function cprint($data, $description, $exit = 0) {
 	echo '<pre>';
+
 	echo "### {$description} start ####";
 	echo '<br/>';
+	echo '<div style="color:red;">';
 	print_r($data);
+	echo '</div>';
+	echo '<br/>';
 	echo "### {$description} end ####";
 	echo '<br/><br/><br/>';
+
 	echo '</pre>';
 
+	if ($exit == 0) {
+		exit();
+	}
 	debug($data, DEBUGPATH, $description);
 
+}
+
+/**
+ * [debug_err_msg 开发模式错误bug调式]
+ * @param  [type] $data        [description]
+ * @param  [type] $description [description]
+ * @return [type]              [description]
+ */
+function debug_err_msg($data, $description) {
+
+	if (ENVIRONMENT == 'development') {
+		echo '<pre>';
+
+		echo "### {$description} start ####";
+		echo '<br/>';
+		echo '<div style="color:red;">';
+		print_r($data);
+		echo '</div>';
+		echo '<br/>';
+		echo "### {$description} end ####";
+		echo '<br/><br/><br/>';
+
+		echo '</pre>';
+
+		debug($data, DEBUGPATH, $description);exit();
+	}
 }
 
 /**
@@ -118,11 +152,11 @@ function theme_taxo_elements_recicle($param) {
 
 		$html .= '<div class="pull-right action-buttons">';
 
-		$html .= '	<a class="red" href="/admin/taxo/add/?tid=' . $value['tid'] . '" >';
+		$html .= '	<a class="red" href="/' . ADMIN_THEME . '/taxo/add/?tid=' . $value['tid'] . '" >';
 		$html .= '		<i class="ace-icon fa fa-plus bigger-130"></i>';
 		$html .= '	</a>';
 
-		$html .= '	<a class="blue" href="/admin/taxo/edit/?tid=' . $value['tid'] . '" >';
+		$html .= '	<a class="blue" href="/' . ADMIN_THEME . '/taxo/edit/?tid=' . $value['tid'] . '" >';
 		$html .= '		<i class="ace-icon fa fa-pencil bigger-130"></i>';
 		$html .= '	</a>';
 
@@ -156,6 +190,16 @@ function theme_taxo_elements_recicle($param) {
 
 }
 
+/**
+ * [theme_msgbox 前台输出提示信息 ]
+ * @param  string $content [description]
+ * @param  string $class   [alert alert-info|alert-warning]
+ * @return [type]          [description]
+ *
+ * [使用方法]
+ * theme_msgbox('编辑成功', 'alert alert-info');
+ * theme_msgbox('编辑失败', 'alert alert-warning')
+ */
 function theme_msgbox($content = '', $class = "") {
 	$html = '';
 	$html .= '<div class="alert ' . $class . '">';

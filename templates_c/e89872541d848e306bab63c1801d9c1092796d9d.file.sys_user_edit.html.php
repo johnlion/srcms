@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-13 16:29:12
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 15:28:18
          compiled from "application/views/admin/sys_user_edit.html" */ ?>
-<?php /*%%SmartyHeaderCode:498838212561cc0d8924ec1-95028036%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:17034487785625ed122e57d3-59044520%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'e89872541d848e306bab63c1801d9c1092796d9d' => 
     array (
       0 => 'application/views/admin/sys_user_edit.html',
-      1 => 1444699607,
+      1 => 1445241884,
       2 => 'file',
     ),
     '6936d4693e583dc0405e92035acaa500586c5a09' => 
     array (
       0 => 'application/views/admin/base_content.html',
-      1 => 1444703926,
+      1 => 1445241884,
       2 => 'file',
     ),
     '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
     array (
       0 => 'application/views/admin/base.html',
-      1 => 1400395326,
+      1 => 1445322852,
       2 => 'file',
     ),
     'a620d37a01f499dc8ef79f2f19a4998155b93b2b' => 
@@ -29,15 +29,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '498838212561cc0d8924ec1-95028036',
+  'nocache_hash' => '17034487785625ed122e57d3-59044520',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_561cc0d8c153b1_35279473',
+  'unifunc' => 'content_5625ed1262ee59_75911589',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_561cc0d8c153b1_35279473')) {function content_561cc0d8c153b1_35279473($_smarty_tpl) {?><?php if (!is_callable('smarty_function_html_options')) include '/vagrant/www/ntf/application/libraries/Smarty/plugins/function.html_options.php';
+<?php if ($_valid && !is_callable('content_5625ed1262ee59_75911589')) {function content_5625ed1262ee59_75911589($_smarty_tpl) {?><?php if (!is_callable('smarty_function_html_options')) include '/vagrant/www/ntf/application/libraries/Smarty/plugins/function.html_options.php';
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
@@ -45,7 +45,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     <meta charset="utf-8" />
     <title>后台管理系统</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="<?php echo @constant('ADMIN_APP_KEYWORD');?>
+" />
+     <meta name="author" content="<?php echo @constant('ADMIN_APP_AUTHOR');?>
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
@@ -56,10 +59,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- page specific plugin styles -->
 
+
+
+
+
+
     <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />-->
 
     <link rel="stylesheet" href="<?php echo @constant('RES_PATH');?>
-/assets/css/jquery-ui.custom.min.css" />
+/assets/css/jquery-ui.css" />
 
     <!-- ace styles -->
     <link rel="stylesheet" href="<?php echo @constant('RES_PATH');?>
@@ -84,7 +92,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <!-- ace settings handler -->
     <script src="<?php echo @constant('RES_PATH');?>
-/assets/js/ace-extra.min.js"></script>
+/assets/js/ace-extra.js"></script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 
@@ -129,12 +137,14 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/admin/main/welcome">主页</a>
+                <a href="/<?php echo @constant('ADMIN_THEME');?>
+/main/welcome">主页</a>
             </li>
 
 
             
-<li><a href="/admin/sys_user">系统用户管理</a></li>
+<li><a href="/<?php echo @constant('ADMIN_THEME');?>
+/sys_user">系统用户管理</a></li>
 <li class="active">编辑</li>
 
         </ul><!-- /.breadcrumb -->
@@ -158,8 +168,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 <form class="form-horizontal" id="validation-form" method="post" role="form">
     <?php /*  Call merged included template "inc_form_result.html" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_form_result.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '498838212561cc0d8924ec1-95028036');
-content_561cc0d8ab7d35_41652622($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_form_result.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '17034487785625ed122e57d3-59044520');
+content_5625ed124b1584_68936430($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "inc_form_result.html" */?>
     <div class="form-group">
@@ -253,7 +263,8 @@ $_smarty_tpl = array_pop($_tpl_stack);
             </button>
 
             &nbsp; &nbsp; &nbsp;
-            <a class="btn" href="/admin/sys_user">
+            <a class="btn" href="/<?php echo @constant('ADMIN_THEME');?>
+/sys_user">
                 <i class="ace-icon fa fa-undo bigger-110"></i>
                 返回
             </a>
@@ -317,7 +328,16 @@ $_smarty_tpl = array_pop($_tpl_stack);
 <script src="<?php echo @constant('RES_PATH');?>
 /assets/js/ace-elements.min.js"></script>
 <script src="<?php echo @constant('RES_PATH');?>
+/assets/js/ace/elements.spinner.js"></script>
+<script src="<?php echo @constant('RES_PATH');?>
 /assets/js/ace.min.js"></script>
+<script src="<?php echo @constant('RES_PATH');?>
+/assets/js/jquery.ui.touch-punch.js"></script>
+
+<!--self scripts -->
+<script src="<?php echo @constant('RES_PATH');?>
+/assets/js/base64.js"></script>
+
 
 <script>
       $(function(){
@@ -412,9 +432,9 @@ $_smarty_tpl = array_pop($_tpl_stack);
 </body>
 </html>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-13 16:29:12
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 15:28:18
          compiled from "application/views/admin/inc_form_result.html" */ ?>
-<?php if ($_valid && !is_callable('content_561cc0d8ab7d35_41652622')) {function content_561cc0d8ab7d35_41652622($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {?>
+<?php if ($_valid && !is_callable('content_5625ed124b1584_68936430')) {function content_5625ed124b1584_68936430($_smarty_tpl) {?><?php if (isset($_smarty_tpl->tpl_vars['error']->value)) {?>
 <div class="alert alert-danger">
     <strong>
         <i class="icon-remove"></i>

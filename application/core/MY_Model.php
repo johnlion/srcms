@@ -101,9 +101,11 @@ class MY_Model extends CI_Model {
 	}
 
 	public function getEntity($where = array(), $cols = array('*')) {
+
 		return $this->db
 			->select($cols)->from($this->_table)
 			->where($where)->get()->row_array();
+
 	}
 
 	public function addEntity($data) {

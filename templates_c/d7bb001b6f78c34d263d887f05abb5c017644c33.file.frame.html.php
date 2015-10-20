@@ -1,30 +1,29 @@
 <?php /* Smarty version Smarty-3.1.18, created on 2015-10-12 14:00:32
-         compiled from "application/views/frame.html" */ ?>
-<?php /*%%SmartyHeaderCode:1269223281561b4c80f3aa02-05920869%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
-$_valid = $_smarty_tpl->decodeProperties(array (
-  'file_dependency' => 
-  array (
-    'd7bb001b6f78c34d263d887f05abb5c017644c33' => 
-    array (
-      0 => 'application/views/frame.html',
-      1 => 1444629848,
-      2 => 'file',
-    ),
-    '9983591074296b35844f91ae042cd15f8192823d' => 
-    array (
-      0 => 'application/views/base.html',
-      1 => 1400395326,
-      2 => 'file',
-    ),
-  ),
-  'nocache_hash' => '1269223281561b4c80f3aa02-05920869',
-  'function' => 
-  array (
-  ),
-  'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_561b4c811401c9_71506545',
-),false); /*/%%SmartyHeaderCode%%*/?>
+compiled from "application/views/frame.html" */?>
+<?php /*%%SmartyHeaderCode:1269223281561b4c80f3aa02-05920869%%*/if (!defined('SMARTY_DIR')) {
+	exit('no direct access allowed');
+}
+
+$_valid = $_smarty_tpl->decodeProperties(array(
+	'file_dependency'  => array(
+		'd7bb001b6f78c34d263d887f05abb5c017644c33' => array(
+			0 => 'application/views/frame.html',
+			1 => 1444629848,
+			2 => 'file',
+		),
+		'9983591074296b35844f91ae042cd15f8192823d' => array(
+			0 => 'application/views/base.html',
+			1 => 1400395326,
+			2 => 'file',
+		),
+	),
+	'nocache_hash'     => '1269223281561b4c80f3aa02-05920869',
+	'function'         => array(
+	),
+	'has_nocache_code' => false,
+	'version'          => 'Smarty-3.1.18',
+	'unifunc'          => 'content_561b4c811401c9_71506545',
+), false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_561b4c811401c9_71506545')) {function content_561b4c811401c9_71506545($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
@@ -98,7 +97,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 
 
-    
+
 <style>
     html,body{
         margin: 0;
@@ -162,7 +161,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     style="margin-right: 6px">
 
                                     <li>
-                                        <a href="/admin/sys_user/password" target="mainFrame">
+                                        <a href="/{%$smarty.const.ADMIN_THEME%}/sys_user/password" target="mainFrame">
                                             <i class="ace-icon fa fa-key"></i>
                                             修改密码
                                         </a>
@@ -171,7 +170,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
                                     <li class="divider"></li>
 
                                     <li>
-                                        <a href="/admin/main/login" target="top">
+                                        <a href="/{%$smarty.const.ADMIN_THEME%}/main/login" target="top">
                                             <i class="ace-icon fa fa-power-off"></i>
                                             退出
                                         </a>
@@ -248,4 +247,5 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
 </body>
 </html>
-<?php }} ?>
+<?php }}
+?>

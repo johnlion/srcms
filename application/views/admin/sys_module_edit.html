@@ -1,6 +1,6 @@
 {%extends file="base_content.html"%}
 {%block name="breadcrumb"%}
-<li><a href="/admin/sys_module">模块管理</a></li>
+<li><a href="/{%$smarty.const.ADMIN_THEME%}/sys_module">模块管理</a></li>
 <li class="active">编辑</li>
 {%/block%}
 
@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div class="form-group {%if !empty($smarty.request.parent_id)%}hidden{%/if%}">
+    <div class="form-group {%if !empty($smarty.get.parent_id)%}hidden{%/if%}">
         <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="module_icon">模块图标:</label>
 
         <div class="col-xs-12 col-sm-9">
@@ -31,7 +31,7 @@
         </div>
     </div>
 
-    <div class="form-group {%if empty($smarty.request.parent_id)%}hidden{%/if%}">
+    <div class="form-group {%if empty($smarty.get.parent_id)%}hidden{%/if%}">
         <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="module_resource">模块地址:</label>
 
         <div class="col-xs-12 col-sm-9">
@@ -42,9 +42,24 @@
         </div>
     </div>
 
-        <input type="hidden" name="module_type" value="{%$smarty.request.module_type|default:'module'%}">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-3 no-padding-right" for="module_hidden">菜单隐藏:</label>
 
-    <input type="hidden" name="module_parent_id" value="{%$smarty.request.parent_id|default:''%}">
+        <div class="col-xs-12 col-sm-9">
+            <div class="clearfix">
+                <label>
+                    <input name="module_hidden" id="module_hidden" class="ace ace-switch ace-switch-6" type="checkbox"
+                           {%if $entity.module_hidden|default:''==1%}checked{%/if%}  value="1"/>
+                    <span class="lbl"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+        <input type="hidden" name="module_type" value="{%$smarty.get.module_type|default:'module'%}">
+
+    <input type="hidden" name="module_parent_id" value="{%$smarty.get.parent_id|default:''%}">
     <div class="clearfix form-actions">
         <div class="col-md-offset-3 col-md-9">
             <button class="btn btn-info" type="submit">
@@ -53,7 +68,7 @@
             </button>
 
             &nbsp; &nbsp; &nbsp;
-            <a class="btn" href="/admin/sys_module">
+            <a class="btn" href="/{%$smarty.const.ADMIN_THEME%}/sys_module">
                 <i class="ace-icon fa fa-undo bigger-110"></i>
                 返回
             </a>
@@ -77,7 +92,7 @@
 
                   module_name: {
                       required: true,
-                      minlength: 3,
+                      minlength: 2,
                       maxlength: 15
                   }
 
@@ -87,8 +102,8 @@
 
                   module_name: {
                       required: "请输入模块名",
-                      minlength: "模块名需要3-15个字符",
-                      maxlength: "模块名需要3-15个字符"
+                      minlength: "模块名需要2-15个字符",
+                      maxlength: "模块名需要2-15个字符"
                   }
               },
 

@@ -9,7 +9,7 @@
 
     <div class="row">
         <div class="col-xs-1"  style="min-width: 80px">
-            <a href="/admin/sys_user_group/add" class="btn btn-success btn-sm">
+            <a href="/{%$smarty.const.ADMIN_THEME%}/sys_user_group/add" class="btn btn-success btn-sm">
                 <i class="ace-icon fa fa-plus bigger-110"></i>新建
             </a>
         </div>
@@ -40,11 +40,11 @@
     <td>
         <div class="action-buttons">
 
-            <a class="blue" href="/admin/sys_group_permission/config/?sys_group_id={%$value.id%}">
+            <a class="blue" href="/{%$smarty.const.ADMIN_THEME%}/sys_group_permission/config/?sys_group_id={%$value.id%}">
                 <i class="ace-icon fa fa-cog bigger-130"></i>
             </a>
 
-            <a class="green" href="/admin/sys_user_group/edit/?id={%$value.id%}">
+            <a class="green" href="/{%$smarty.const.ADMIN_THEME%}/sys_user_group/edit/?id={%$value.id%}">
                 <i class="ace-icon fa fa-pencil bigger-130"></i>
             </a>
 

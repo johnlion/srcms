@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-18 14:11:13
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:03:48
          compiled from "application/views/admin/sys_user_list.html" */ ?>
-<?php /*%%SmartyHeaderCode:1333557205562338015c1d25-39997357%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:111130214562603741e16e2-39345042%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '2b19a3bd9d3f62027977ce3fb3384329c51446cd' => 
     array (
       0 => 'application/views/admin/sys_user_list.html',
-      1 => 1444719026,
+      1 => 1445241884,
       2 => 'file',
     ),
     '6936d4693e583dc0405e92035acaa500586c5a09' => 
     array (
       0 => 'application/views/admin/base_content.html',
-      1 => 1444703926,
+      1 => 1445241884,
       2 => 'file',
     ),
     '876edf79e9c9c5b13d06cad0ee5a6bbe2762dc8e' => 
     array (
       0 => 'application/views/admin/base.html',
-      1 => 1445046913,
+      1 => 1445322852,
       2 => 'file',
     ),
     '2ec1863126e136f6c010ce65e21b3c5dff64ed3b' => 
@@ -29,22 +29,25 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1333557205562338015c1d25-39997357',
+  'nocache_hash' => '111130214562603741e16e2-39345042',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.18',
-  'unifunc' => 'content_56233801891b81_57111697',
+  'unifunc' => 'content_562603743d2f42_45372390',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_56233801891b81_57111697')) {function content_56233801891b81_57111697($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<?php if ($_valid && !is_callable('content_562603743d2f42_45372390')) {function content_562603743d2f42_45372390($_smarty_tpl) {?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta charset="utf-8" />
     <title>后台管理系统</title>
 
-    <meta name="description" content="" />
+    <meta name="description" content="<?php echo @constant('ADMIN_APP_KEYWORD');?>
+" />
+     <meta name="author" content="<?php echo @constant('ADMIN_APP_AUTHOR');?>
+" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
     <!-- bootstrap & fontawesome -->
@@ -133,7 +136,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
         <ul class="breadcrumb">
             <li>
                 <i class="ace-icon fa fa-home home-icon"></i>
-                <a href="/admin/main/welcome">主页</a>
+                <a href="/<?php echo @constant('ADMIN_THEME');?>
+/main/welcome">主页</a>
             </li>
 
 
@@ -160,7 +164,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 
     <div class="row">
         <div class="col-xs-1"  style="min-width: 80px">
-            <a href="/admin/sys_user/add" class="btn btn-success btn-sm">
+            <a href="/<?php echo @constant('ADMIN_THEME');?>
+/sys_user/add" class="btn btn-success btn-sm">
                 <i class="ace-icon fa fa-plus bigger-110"></i>新建
             </a>
         </div>
@@ -227,7 +232,8 @@ $_smarty_tpl->tpl_vars['value']->_loop = true;
             <div class="action-buttons">
 
 
-                <a class="green" href="/admin/sys_user/edit&id=<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
+                <a class="green" href="/<?php echo @constant('ADMIN_THEME');?>
+/sys_user/edit?id=<?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
 ">
                     <i class="ace-icon fa fa-pencil bigger-130"></i>
                 </a>
@@ -260,8 +266,8 @@ if (!$_smarty_tpl->tpl_vars['value']->_loop) {
 ?>
     <?php /*  Call merged included template "inc_gritter.html" */
 $_tpl_stack[] = $_smarty_tpl;
- $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_gritter.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '1333557205562338015c1d25-39997357');
-content_56233801802748_95732627($_smarty_tpl);
+ $_smarty_tpl = $_smarty_tpl->setupInlineSubTemplate("inc_gritter.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, null, array(), 0, '111130214562603741e16e2-39345042');
+content_56260374351d91_74191835($_smarty_tpl);
 $_smarty_tpl = array_pop($_tpl_stack); 
 /*  End of included template "inc_gritter.html" */?>
     <?php } ?>
@@ -374,9 +380,9 @@ $_smarty_tpl = array_pop($_tpl_stack);
 </body>
 </html>
 <?php }} ?>
-<?php /* Smarty version Smarty-3.1.18, created on 2015-10-18 14:11:13
+<?php /* Smarty version Smarty-3.1.18, created on 2015-10-20 17:03:48
          compiled from "application/views/admin/inc_gritter.html" */ ?>
-<?php if ($_valid && !is_callable('content_56233801802748_95732627')) {function content_56233801802748_95732627($_smarty_tpl) {?><script>
+<?php if ($_valid && !is_callable('content_56260374351d91_74191835')) {function content_56260374351d91_74191835($_smarty_tpl) {?><script>
 
     $(function () {
         $.gritter.add({

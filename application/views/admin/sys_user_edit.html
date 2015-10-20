@@ -1,6 +1,6 @@
 {%extends file="base_content.html"%}
 {%block name="breadcrumb"%}
-<li><a href="/admin/sys_user">系统用户管理</a></li>
+<li><a href="/{%$smarty.const.ADMIN_THEME%}/sys_user">系统用户管理</a></li>
 <li class="active">编辑</li>
 {%/block%}
 
@@ -97,7 +97,7 @@
             </button>
 
             &nbsp; &nbsp; &nbsp;
-            <a class="btn" href="/admin/sys_user">
+            <a class="btn" href="/{%$smarty.const.ADMIN_THEME%}/sys_user">
                 <i class="ace-icon fa fa-undo bigger-110"></i>
                 返回
             </a>
